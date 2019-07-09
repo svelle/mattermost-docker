@@ -23,6 +23,8 @@ RUN apk add --no-cache \
 	netcat-openbsd \
 	xmlsec-dev \
 	tzdata \
+	openldap-clients \
+	bash \
 	&& rm -rf /tmp/*
 
 # Get Mattermost
@@ -51,4 +53,4 @@ CMD ["mattermost"]
 EXPOSE 8000
 
 # Declare volumes for mount point directories
-VOLUME ["/mattermost/data", "/mattermost/logs", "/mattermost/config", "/mattermost/plugins", "/mattermost/client/plugins"]
+VOLUME ["/mattermost/data", "/mattermost/logs", "/mattermost/config", "/mattermost/plugins", "/mattermost/client/plugins", "/mattermost/scripts"]
